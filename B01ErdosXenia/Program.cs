@@ -41,6 +41,7 @@ namespace B01ErdosXenia
 
         static void Egyediek()
         {
+            StreamWriter sw = new StreamWriter("adatok.dat");
             int i = 0;
             int db = 0;
             while (i < a.Length && a[i] % 5 == 0 && a[i] % 4 !=0)
@@ -50,7 +51,9 @@ namespace B01ErdosXenia
                     db++;
                 }
             }
-            Console.WriteLine("5-el osztható de 4-el nem oszthatóak száma: {0}", db);
+            sw.WriteLine("5-el osztható de 4-el nem oszthatóak száma: {0}", db);
+            sw.Close();
+            
         }
 
         static void Main(string[] args)
